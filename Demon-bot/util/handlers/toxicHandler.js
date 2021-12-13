@@ -14,7 +14,7 @@ module.exports = {
 
         if(data.Module === "true") {
             try {
-                const perspective = new Perspective({apiKey: process.env.PERSPECTIVE_API_KEY})
+                const perspective = new Perspective({apiKey: client.config.apis.perspective})
 
                 let result = await perspective.analyze(message.content.toLowerCase())
                 let obj = JSON.parse(JSON.stringify(result))

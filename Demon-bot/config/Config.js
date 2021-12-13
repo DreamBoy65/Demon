@@ -11,15 +11,15 @@ module.exports = {
     },
     intents: [
         Intents.FLAGS.GUILDS,
-				Intents.FLAGS.GUILD_MEMBERS,
-				Intents.FLAGS.GUILD_MESSAGES,
-				Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
-				Intents.FLAGS.DIRECT_MESSAGES,
+        Intents.FLAGS.GUILD_MEMBERS,
+        Intents.FLAGS.GUILD_MESSAGES,
+        Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+        Intents.FLAGS.DIRECT_MESSAGES,
         Intents.FLAGS.GUILD_WEBHOOKS,
         Intents.FLAGS.GUILD_INVITES,
-     Intents.FLAGS.GUILD_MESSAGE_TYPING,
-Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
-Intents.FLAGS.DIRECT_MESSAGE_TYPING,
+        Intents.FLAGS.GUILD_MESSAGE_TYPING,
+        Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
+        Intents.FLAGS.DIRECT_MESSAGE_TYPING,
 			],
     partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
     allowedMentions: {
@@ -54,7 +54,9 @@ Intents.FLAGS.DIRECT_MESSAGE_TYPING,
 
   apis: {
     AME_API: process.env.AME,
-    TENOR: process.env.TENOR
+    TENOR: process.env.TENOR,
+    perspective: process.env.PERSPECTIVE_API_KEY,
+    
   },
 
   giveaway: {
