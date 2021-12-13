@@ -1,0 +1,70 @@
+[
+  {
+    "emojis": ["🍳", "🎂"],
+    "name": "Pancake"
+  },
+  {
+    "emojis": ["🍓", "🥛", "🤝"],
+    "name": "StrawBerry MilkShake"
+  },
+  {
+    "emojis": ["🇫🇷", "🍟"],
+    "name": "French Fries"
+  },
+  {
+    "emojis": ["🥵", "🐶"],
+    "name": "HotDog"
+  },
+  {
+    "emojis": ["🌲", "🍎"],
+    "name": "PineApple"
+  },
+  {
+    "emojis": ["💢", "🌽"],
+    "name": "Popcorn"
+  },
+  {
+    "emojis": ["🍚", "🎂"],
+    "name": "Rice Cake"
+  },
+  {
+    "emojis": ["🧄", "🍞"],
+    "name": "Garlic Bread"
+  }, 
+  {
+    "emojis": ["🍼", "🤝"],
+    "name": "MilkShake"
+  }, 
+  {
+    "emojis": ["☁️", "🍭"],
+    "name": "Cotton Candy"
+  },
+  {
+    "emojis": ["🌕", "🥧"],
+    "name": "Moon Pie"
+  },
+  {
+    "emojis": ["🧅", "💍"],
+    "name": "Onion Ring"
+  },
+  {
+    "emojis": ["🍇🍉🍎", "🐻"],
+    "name": "Fruit bear"
+  },
+  {
+    "emojis": ["🥚", "🧻"],
+    "name": "Egg Roll"
+  },
+  {
+    "emojis": ["🥥", "💧"],
+    "name": "Coconut water"
+  },
+  {
+    "emojis": ["🏖", "🧙‍♀️"],
+    "name": "Sandwich"
+  }, 
+  {
+    "emojis": ["🧊", "☕"],
+    "name": "Cold coffee"
+  }
+]
