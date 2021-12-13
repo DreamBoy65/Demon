@@ -1,5 +1,6 @@
 //modules
 const chalk = require('chalk');
+require("./website")
 console.log(
 	chalk.bold(chalk.blue.bold('[Demon]')) +
 		chalk.cyan.bold('LOADING............')
