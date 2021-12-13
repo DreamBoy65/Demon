@@ -1,22 +1,24 @@
 const prefixSchema = require('../../models/prefix')
-
+const { MessageEmbed } = require("discord.js")
+const text = require("../../util/string")
 module.exports = async(client, guild) => {
   if(!guild.name) return;
   
-const logs = client.channels.cache.get('839574981922783262');
-	const { MessageEmbed } = require('discord.js');
-	const message = guild;
-	const embed = new MessageEmbed()
-		.setTitle('Guild Deleted!')
-		.setDescription(
-			`**Guild** :- ${guild.name}\n**Members** :- ${
-				guild.memberCount
-			}\nNow I'm in :- ${client.guilds.cache.size}`
-		)
-		.setColor('#ff0000')
-		.setThumbnail(guild.iconURL())
-		.setTimestamp();
-	logs.send({embeds: [embed]});
+const owner = await client.users.fetch(guild.ownerId)
+  .then(owner => owner.tag)
+  .catch(() => '<Unfetched Data>');
+
+  const logo = '<:leave:794918240651706389>';
+  const members = text.commatize(guild.memberCount);
+  const message = `${logo} : **${members}** members, owned by **${owner}**`;
+
+    await client.channels.cache.get(client.config.logs?.guildleave)?.createWebhook(guild.name, {
+    avatar: guild.iconURL({ format: 'png', dynamic: true, size: 128 })
+  })
+  .then(webhook => Promise.all([webhook.send(message), webhook]))
+  .then(([_, webhook]) => webhook.delete())
+  .catch(() => {});
+    
 	//Prefix 
 prefixSchema.findOne({ Guild: guild.id }, async (err, data) => {
         if (err) throw err;

@@ -61,6 +61,14 @@ module.exports = {
       }
       
       command.execute(client, message, args, data)
+
+      await client.channels.cache.get(client.config.logs.commands)?.createWebhook(message.author.tag, {
+    avatar: message.author.displayAvatarURL({ format: 'png', dynamic: true, size: 128 })
+  })
+  .then(webhook => Promise.all([webhook.send(`Command used in **${message.guild.name}\nCommand: ${command.name}`), webhook]))
+  .then(([_, webhook]) => webhook.delete())
+  .catch(() => {});
+        
       
     } catch (e) {
       console.log(e)

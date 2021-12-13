@@ -1,18 +1,24 @@
+const { MessageEmbed } = require('discord.js');
+const text = require("../../util/string")
 module.exports = async (client, guild) => {
-	const logs = client.channels.cache.get('836912231332708352');
-	const { MessageEmbed } = require('discord.js');
-	const message = guild;
-	const embed = new MessageEmbed()
-		.setTitle('New Guild Detected!')
-		.setDescription(
-			`**Guild** :- ${guild.name}\n**Members** :- ${
-				guild.memberCount
-			}\nNow I'm in :- ${client.guilds.cache.size}`
-		)
-		.setColor('#ff0000')
-		.setThumbnail(guild.iconURL())
-		.setTimestamp();
-	logs.send({embeds: [embed]});
+
+    const owner = await client.users.fetch(guild.ownerId)
+  .then(owner => owner.tag)
+  .catch(() => '<Unfetched Data>');
+
+  const logo = '<:Enter:794918219835637760>';
+  const members = text.commatize(guild.memberCount);
+  const message = `${logo} : **${members}** members, owned by **${owner}**`;
+
+    
+	await client.channels.cache.get(client.config.logs?.guildjoin)?.createWebhook(guild.name, {
+    avatar: guild.iconURL({ format: 'png', dynamic: true, size: 128 })
+  })
+  .then(webhook => Promise.all([webhook.send(message), webhook]))
+  .then(([_, webhook]) => webhook.delete())
+  .catch(() => {});
+
+    
 	let channel;
 	let embed2 = new MessageEmbed()
 		.setTitle('Thxn for inviting me', client.user.displayAvatarURL())
@@ -26,7 +32,7 @@ module.exports = async (client, guild) => {
 
 	guild.channels.cache.forEach(c => {
 		if (
-			c.type === 'text' &&
+			c.type === 'GUILD_TEXT' &&
 			!channel &&
 			c.permissionsFor(guild.me).has('SEND_MESSAGES', 'EMBED_LINKS')
 		)
