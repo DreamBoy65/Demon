@@ -54,3 +54,7 @@ return this.reply({
     .setTimestamp()
   ]})
 }
+
+Message.prototype.Reply = function(string) {
+  return this.reply(string)
+}

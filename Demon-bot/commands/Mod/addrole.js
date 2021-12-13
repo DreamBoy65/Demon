@@ -8,10 +8,10 @@ module.exports = {
         usage: "[name | nickname | mention | ID] <role>",
 category: "Mod",
         accessableby: "Administrator",
+        clientPermissions: ["SEND_MESSAGES", 
+"EMBED_LINKS", "MANAGE_ROLES"],
+        memberPermissions: ["MANAGE_ROLES"],
     execute: async (bot, message, args) => {
-
-        if (!message.member.permissions.has("MANAGE_ROLES")) return message.channel.send("<a:crosss:844939715816063024> | **You Dont Have The Permissions To Add Roles To Users! - [MANAGE_ROLES]**");
-        if (!message.guild.me.permissions.has("MANAGE_ROLES")) return message.channel.send("<a:crosss:844939715816063024> | **I Dont Have The Permissions To Add Roles To Users! - [MANAGE_ROLES]**");
         
         if (!args[0]) return message.channel.send("<a:crosss:844939715816063024> | **Please Enter A Role!**")
 

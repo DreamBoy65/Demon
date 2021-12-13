@@ -7,12 +7,16 @@ module.exports = {
         description: "Unmutes a member in the discord!",
         usage: "[name | nickname | mention | ID] <reason> (optional)",
         category: "Mod",
+        clientPermissions: ["SEND_MESSAGES", 
+"EMBED_LINKS", "MANAGE_GUILD"],
+        memberPermissions: ["MANAGE_GUILD"],
     execute: async (client, message, args) => {
-        if (!message.member.permissions.has("MANAGE_GUILD")) return message.channel.send("**You Dont Have The Permissions To Unmute Someone!**");
-
-        if (!message.guild.me.permissions.has("MANAGE_GUILD")) return message.channel.send("**I Don't Have Permissions To Unmute Someone!**")
-        if (!args[0]) return message.channel.send("**Please Enter A User!**")
-        let mutee = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args[0].toLocaleLowerCase()) || message.guild.members.cache.find(ro => ro.displayName.toLowerCase() === args[0].toLocaleLowerCase());
+      
+        let mutee = await client.resolvers.resolveMember({
+          message,
+          search: args[0]
+        })
+        
         if (!mutee) return message.channel.send("**Please Enter A Valid User!**");
 
         let reason = args.slice(1).join(" ");

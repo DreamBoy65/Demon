@@ -10,19 +10,16 @@ module.exports = {
 	name: 'userinfo',
 	aliases: ['whois'],
 	category: 'Mod',
+  memberPermissions: ["MANAGE_GUILD"],
 	execute: async (client, message, args) => {
-		if (!message.member.permissions.has('MANAGE_SERVER'))
-			return message.channel.send(
-				'<a:crosss:844939715816063024> | You need **Manage_server** permission to use this command '
-			);
 
 		var permissions = [];
 		var acknowledgements = 'None';
 
-		const member =
-			message.mentions.members.first() ||
-			message.guild.members.cache.get(args[0]) ||
-			message.member;
+		const member = await client.resolvers.resolveMember({
+		  message,
+		  search: args.join(" ")
+		})
 
 		const randomColor = '#000000'.replace(/0/g, function() {
 			return (~~(Math.random() * 16)).toString(16);
@@ -115,6 +112,6 @@ if (member.user.id == message.guild.ownerId) {
 
 			.addField('Acknowledgements: ', `${acknowledgements}`, true);
 
-		message.Reply({embeds: [embed]});
+		message.reply({embeds: [embed]});
 	}
 };

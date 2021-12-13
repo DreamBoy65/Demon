@@ -4,12 +4,12 @@ module.exports = {
         name: "unban",
         description: "Unban a user from the guild!",
         usage: "[name | tag | mention | ID] <reason> (optional)",
-        
-category: 'Mod',
+        category: 'Mod',
         accessableby: "Administrator",
+        clientPermissions: ["SEND_MESSAGES", 
+"EMBED_LINKS", "BAN_MEMBERS"],
+        memberPermissions: ["BAN_MEMBERS"],
     execute: async (bot, message, args) => {
-
-        if (!message.member.permissions.has("BAN_MEMBERS")) return message.channel.send("<a:crosss:844939715816063024> | **You Dont Have The Permissions To Unban Someone! - [BAN_MEMBERS]**")
 
         if (!args[0]) return message.channel.send("<a:crosss:844939715816063024> | **Please Enter A Name!**")
       
