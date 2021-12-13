@@ -1,4 +1,5 @@
-const translate = require('@k3rn31p4nic/google-translate-api');
+const translate = require("@iamtraction/google-translate");
+
 const Discord = require('discord.js');
 
 const langs = [
@@ -276,6 +277,6 @@ const l = translated.from.language.iso
 			.addField(lang, '```' + translated.text + '```')
 			.setColor('RANDOM')
 			.setFooter(message.author.username, message.author.displayAvatarURL());
-		m.edit({embeds: [resEmbed]});
+		m.edit({embeds: [resEmbed], content: ""});
 	}
 };
