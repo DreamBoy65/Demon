@@ -1,12 +1,13 @@
 const {MessageEmbed}=require("discord.js")
 const glob = require("glob")
-const owner = "813299347819069520"
+
 module.exports = {
   name: "reload",
   category: "Owner",
   description: "reload all cmds",
+  ownerOnly: true,
   execute: async(client, message, args) =>{
-    if(message.author.id != owner) return 
+     
     client.commands.sweep(() => true)
     
     glob(`${__dirname}/../**/*.js`, async (err, filePaths) =>{

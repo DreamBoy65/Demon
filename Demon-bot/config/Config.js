@@ -30,6 +30,13 @@ module.exports = {
   prefix: "$",
 
   debug: false,
+  
+  logs: {
+    debug: "891922139089870868",
+    guildjoin: "836912231332708352",
+    guildleave: "839574981922783262",
+    commands: "877922139360092221"
+  },
 
   database: {
     enable: true,

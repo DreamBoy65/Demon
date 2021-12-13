@@ -15,8 +15,6 @@ module.exports = {
     'eval 1+1'
   ],
   execute: async (client, message, args) => {
-    
-    if(message.author.id !== "813299347819069520") return;
 
     try {
 
