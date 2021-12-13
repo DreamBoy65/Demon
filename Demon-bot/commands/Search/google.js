@@ -21,7 +21,7 @@ module.exports = {
 			.query({
 				q: query,
 				cx: 'a2e8574ac38af30f9',
-				key: 'AIzaSyDTZJ7othgqvO5vk68EB6q95AW4ewlzfxM'
+				key: client.config.apis.google
 			});
 
 		if (!result.body.items)

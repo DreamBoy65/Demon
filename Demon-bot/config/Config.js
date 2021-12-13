@@ -56,7 +56,7 @@ module.exports = {
     AME_API: process.env.AME,
     TENOR: process.env.TENOR,
     perspective: process.env.PERSPECTIVE_API_KEY,
-    
+    google: process.env.GOOGLE_API_KEY
   },
 
   giveaway: {
