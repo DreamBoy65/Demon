@@ -33,6 +33,13 @@ module.exports = {
 			false: 'No',
 			true: 'Yes'
 		};
+        let pms = []
+        let sp = role.permissions.serialize()
+        Object.keys(sp).map(p => {
+            if(sp[p]) {
+                pms.push(p.split("_").join(" "))
+            }
+        })
 
 		let roleembed = new MessageEmbed()
 			.setColor('#00ff00')
@@ -41,9 +48,10 @@ module.exports = {
 			.addField('**ID**', `\`${role.id}\``, true)
 			.addField('**Name**', role.name, true)
 			.addField('**Hex**', role.hexColor)
-			.addField('**Members**', role.members.size.toString())
-			.addField('**Position**', role.position.toString())
-			.addField('**Mentionable**', status[role.mentionable])
+			.addField('**Members**', `${role.members.size.toString()}`)
+			.addField('**Position**', `${role.position.toString()}`)
+			.addField('**Mentionable**', `${status[role.mentionable]}`)
+            .addField("**Perms**", `${pms.map(p => `\`${p}\``).join(" , ")}`)
 			.setFooter(message.member.displayName, message.author.displayAvatarURL())
 			.setTimestamp();
 

@@ -23,29 +23,47 @@ module.exports = mongoose.model(
 			type: String,
 			default: '{member} just unboosted the server!'
 		},
-    boostRoles: {
-      type: Array,
+        boostRoles: {
+          type: Array,
       default: []
     },
-		ticketParent: {
-		  type: String,
-		  default: null
-		},
-		ticketChannel: {
-		  type: String,
-		  default: null
-		},
-		ticketMsg: {
-		  type: String,
-		  default: null
-		}, 
+		tickets: {
+            category: {
+                type: String,
+                default: null
+            },
+            channel: {
+                type: String,
+                default: null
+            },
+            msgId: {
+                type: String,
+                default: null
+            },
+            uses: {
+                type: Number,
+                default: 0
+            },
+            opened: {
+                type: Array,
+                default: []
+            }
+        },
 		globalChat: {
 		  type: String,
 		  default: null
 		},
-    afk: {
-      type: Array,
-      default: []
-    }
+        confess: {
+            type: String,
+            default: null
+        },
+        cno: {
+            type: Number,
+            default: 0
+        },
+        afk: {
+          type: Array,
+          default: []
+        }
 	})
 );

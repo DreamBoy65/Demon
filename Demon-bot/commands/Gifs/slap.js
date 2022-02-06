@@ -1,14 +1,14 @@
 const { MessageEmbed } = require("discord.js");
 const fetch = require("node-fetch");
+const Images = require("discord-images")
+const images = new Images.Client()
 
 module.exports = {
   name: "slap",
   description: "Slap somebody",
   category: "Gifs",
   async execute(bot, message) {
-    const data = await fetch("https://nekos.life/api/v2/img/slap").then((res) =>
-      res.json()
-    );
+    const data = images.slap()
     const user = message.mentions.users.first() || message.author;
     const slapped = message.author.id === user.id ? "themselfs" : user.username;
 
@@ -17,7 +17,7 @@ module.exports = {
       .setColor("BLUE")
       .setTitle(`${message.author.username} Slapped ${slapped}`)
 
-      .setImage(`${data.url}`)
+      .setImage(`${data}`)
       .setTimestamp();
 
     message.channel.send({embeds: [embed]});

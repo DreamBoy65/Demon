@@ -7,7 +7,7 @@ category: "General",
     const e = new MessageEmbed()
     .setTitle("Here's my support server")
     .setColor("RANDOM")
-    .setDescription("[click me](https://discord.gg/Qs6TTXxeNx)")
+    .setDescription("[click me](https://discord.gg/pwAXkpsCHf)")
     .setFooter(message.author.username, message.author.displayAvatarURL())
    .setTimestamp()
     message.channel.send({embeds: [e]})

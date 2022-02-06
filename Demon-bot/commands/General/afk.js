@@ -15,11 +15,15 @@ module.exports = {
   guildOnly: true,
   execute: async(client, message, args, data) => {
     try {
-      await data.push({
+      await data.afk.push({
           id: message.author.id,
           reason: args.length ? args.join(" ") : "haha",
           time: Date.now()
-      }).save()
+      })
+          
+          setTimeout(async() => {
+              await data.save()
+          }, 5000)
 
         message.member.setNickname(message.member.nickname ? message.member.nickname : `[AFK] ${message.author.username}`).catch(() => {})
 

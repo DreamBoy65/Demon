@@ -1,6 +1,6 @@
 const inviteRegex = /(https?:\/\/)?(www\.|canary\.|ptb\.)?discord(\.gg|(app)?\.com\/invite|\.me)\/([^ ]+)\/?/gi;
 const botInvRegex = /(https?:\/\/)?(www\.|canary\.|ptb\.)?discord(app)\.com\/(api\/)?oauth2\/authorize\?([^ ]+)\/?/gi;
-
+const config = require("../config/Config.js")
 const Prefix = require("../models/prefix")
 
 module.exports = {
@@ -54,7 +54,8 @@ module.exports = {
 				`<@!${message.client.user.id}> `,
 				`<@${message.client.user.id}> `,
 				"demon",
-				data ? data.Prefix : "$"
+				data?.Prefix,
+                config.prefix
 			];
 			let prefix = null
 

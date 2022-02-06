@@ -4,7 +4,7 @@ module.exports ={
 category: "General",
 	description:"send a report to owner",
 	 execute(client, message, args){
-		const owner = client.channels.cache.get("842394029949714442")
+		const owner = client.channels.cache.get("923709601214517288")
 		const query = args.join(" ")
 		if(!query) return message.channel.send("<a:crosss:844939715816063024>Please specify a query")
 		const rembed = new MessageEmbed()

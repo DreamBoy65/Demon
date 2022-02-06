@@ -9,7 +9,8 @@ module.exports = {
 
             if(!data) return;
 
-            if(message.channel.id !== data.Channel) return;
+            if(message.channel?.id !== data.Channel) return;
+
 
             let webhooks = await message.channel.fetchWebhooks()
 
@@ -36,7 +37,8 @@ module.exports = {
                 avatar: client.user.displayAvatarURL()
             })
         } else {
-            
+
+            if(message.content.startsWith("$")) return;            
             let chat = await fetch(`http://api.brainshop.ai/get?bid=157869&key=h0PX1NOYuGTdDCY3&uid=1&msg=${encodeURIComponent(message.content)}`).then(res => res.json())
 
             message.reply(chat.cnt)

@@ -70,8 +70,8 @@ module.exports = {
         .then(json => bin = 'https://hastebin.com/' + json.key + '.js')
         .catch(() => null)
 
-        if (client.config.channels.uploads){
-          await client.channels.cache.get(client.config.channels.uploads)
+        if (client.config.logs.uploads){
+          await client.channels.cache.get(client.config.logs.uploads)
           .send({ files: [{ attachment: Buffer.from(output), name: 'evaled.txt' }]})
           .then(message => download = message.attachments.first().url)
           .catch(() => null);

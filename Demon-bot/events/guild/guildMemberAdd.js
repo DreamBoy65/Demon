@@ -1,13 +1,14 @@
 const {Database} = require("quickmongo")
 const db = new Database(process.env.MONGODB)
 const modifier = require("../../util/modify")
-const canvas = require("discord-canvas")
-let Welcomed = new canvas.Welcome();
+const fetch = require("node-fetch")
 const Discord = require("discord.js")
+const { welcomeImage } = require('discord-welcome-card');
+
 module.exports = async(client, member) => {
 let Wimage = await db.fetch(`Wel_${member.guild.id}_image`)
 
-if(!Wimage) Wimage = "https://images.wallpaperscraft.com/image/landscape_art_road_127350_1280x720.jpg"
+if(!Wimage) Wimage = "https://images.wallpaperscraft.com/image/landscape_art_road_127350_1280x720.png"
 
 const opt = await db.fetch(`image_${member.guild.id}_w`)
   let Channel = await db.fetch(`wlcm-channel_${member.guild.id}`);
@@ -22,19 +23,25 @@ const opt = await db.fetch(`image_${member.guild.id}_w`)
   
   let m = await modifier.modify(Msg, member)
   
-  let Welcomed = new canvas.Welcome();
-  let Image = await Welcomed
-  .setUsername(member.user.username)
-  .setDiscriminator(member.user.discriminator)
-  .setGuildName(member.guild.name)
-  .setAvatar(member.user.displayAvatarURL({ dynamic: false, format: "jpg" }))
-  .setMemberCount(member.guild.memberCount)
-   .setBackground(Wimage)
-   .toAttachment();
-
-
-  
-  let Attachment = new Discord.MessageAttachment(Image.toBuffer(), "Welcome.png");
+  const Image = await welcomeImage(member, {
+      theme: 'dark',
+      text: {
+        title: 'Welcome to this server,',
+        text: member.user.tag,
+        subtitle: `MemberCount: ${member.guild.memberCount}`,
+        color: `#88f`
+      },
+      avatar: {
+          image: member.user.displayAvatarURL({ format: 'png' }),
+          outlineWidth: 5,
+    },
+    background: Wimage,
+    blur: 1,
+    border: true,
+    rounded: true
+    });
+    
+  let Attachment = new Discord.MessageAttachment(Image, "Welcome.png");
 
   const wchannel = client.channels.cache.get(Channel)
   

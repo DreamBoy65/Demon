@@ -25,7 +25,7 @@ module.exports = {
      },
     });
    }
-   const channel = client.channels.cache.get(client.config?.suggestionschannel);
+   const channel = client.channels.cache.get("923709601214517288");
    if (channel) {
     const embed = new Discord.MessageEmbed() // Prettier()
      .setAuthor("🤔" + message.author.username + " suggestion!", message.guild.iconURL())

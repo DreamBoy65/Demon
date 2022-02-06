@@ -32,10 +32,12 @@ module.exports = {
   debug: false,
   
   logs: {
-    debug: "891922139089870868",
-    guildjoin: "836912231332708352",
-    guildleave: "839574981922783262",
-    commands: "877922139360092221"
+    debug: "923709530628558848",
+    guildjoin: "923709432641249340",
+    guildleave: "923709484415737856",
+    commands: "923854825010135060",
+    uploads: "923709705187098695",
+    feedbacks: "923709601214517288",
   },
 
   database: {

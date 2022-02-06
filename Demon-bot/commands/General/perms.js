@@ -18,7 +18,7 @@ module.exports = {
      • \`KICK_MEMBERS\`: ${message.guild.me.permissions.has("KICK_MEMBERS") ? client.emoji.tick : client.emoji.cross}
      • \`BAN_MEMBERS\`: ${message.guild.me.permissions.has("BAN_MEMBERS") ? client.emoji.tick : client.emoji.cross}
      • \`ADD_REACTIONS\`: ${message.guild.me.permissions.has("ADD_REACTIONS") ? client.emoji.tick : client.emoji.cross}
-     • \`MANAGE_EMOJIS\`: ${message.guild.me.permissions.has("MANAGE_EMOJIS") ? client.emoji.tick : client.emoji.cross}
+     • \`MANAGE_EMOJIS\`: ${message.guild.me.permissions.has("MANAGE_EMOJIS_AND_STICKERS") ? client.emoji.tick : client.emoji.cross}
      • \`SEND_MESSAGES\`: ${message.guild.me.permissions.has("SEND_MESSAGES") ? client.emoji.tick : client.emoji.cross}
      • \`MANAGE_MESSAGES\`: ${message.guild.me.permissions.has("MANAGE_MESSAGES") ? client.emoji.tick : client.emoji.cross}
      • \`EMBED_LINKS\`: ${message.guild.me.permissions.has("EMBED_LINKS") ? client.emoji.tick : client.emoji.cross}

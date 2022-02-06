@@ -5,13 +5,13 @@ module.exports = {
 	category: 'Games',
 	execute: async (client, message, args) => {
 		let opponent =
-			message.mentions.members.first() ||
-			message.guild.members.cache.get(args[0]) ||
-			message.guild.members.cache.find(
+			message.mentions.users.first() ||
+			client.users.cache.get(args[0]) ||
+			client.users.cache.find(
 				r =>
 					r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()
 			) ||
-			message.guild.members.cache.find(
+			client.users.cache.find(
 				r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()
 			);
 		if (!opponent)

@@ -1,20 +1,24 @@
-const db = require("old-wio.db")
-const { MessageEmbed } = require("discord.js")
+const { MessageEmbed, MessageButton, MessageActionRow } = require("discord.js")
 module.exports = {
-	name: 'open-ticket',
-	description: 'open the ticket',
-	category: 'Ticket',
-	execute: async (client, message, args) => {
-	  if(db.has(message.author.username)) return message.Reply("You already have a open ticket!")
-	  
-		let parent = await message.guild.channels.cache.get(
-			client.data.ticketParent
-		);
-		if (!parent) parent = null
+  name: "ticket-create",
+  aliases: [],
+  category: "Ticket",
+  description: "create a ticket",
+  clientPermissions: ["SEND_MESSAGES", 
+"EMBED_LINKS", "MANAGE_CHANNELS"],
+  memberPermissions: [],
+  examples: ["ticket-create"],
+  cooldown: {
+    time: 5000,
+    message: ""
+  },
+  nsfw: false,
+  guildOnly: true,
+  execute: async(client, message, args, data) => {
+    try {
 
-		message.guild.channels
-			.create(message.author.username, {
-				parent: parent,
+        const Channel = await message.member.guild.channels.create(`Ticket-${data.tickets.uses}`, {
+				parent: data.tickets.category ? data.tickets.category : null,
 				permissionOverwrites: [
 					{
 						id: message.guild.id,
@@ -26,20 +30,31 @@ module.exports = {
 					}
 				]
 			})
-			.then(async channel => {
-				db.set(message.author.username, 'Opened');
-				const msg = await channel.send(
-					`<@${message.author.id}> Welcome!`,
-          {embeds: [new MessageEmbed()
-						.setColor('RANDOM')
-						.setTitle('Welcome To Your Ticket')
-						.setDescription('Please Provide Your Issues')
-						.setTimestamp()
-						.setFooter(`Ticket For ${message.author.username}#${message.author.discriminator}`)
-				]});
-				await msg.react('❌');
-				db.set('msgid', msg.id);
-message.Reply(`opening.. Ticket!\n<#${channel.id}>`)
-			})
-	}
-};
+       data.tickets.uses = data.tickets.uses + 1
+       data.tickets.opened.push(Channel.id)
+        
+        await data.save()
+        await message.reply({content: "Ticket opened!\nHead to " + `<#${Channel.id}>`, ephemeral: true})
+
+        const embed = new MessageEmbed()
+        .setTitle("Welcome to Ticket.")
+        .setDescription("Describe your issues here.")  
+        .setColor("RANDOM")
+        .setTimestamp() 
+
+        const row = new MessageActionRow()
+			.addComponents(
+				new MessageButton()
+					.setCustomId("ticket-close")
+					.setLabel('Close')
+					.setStyle('DANGER')
+          .setEmoji(client.emoji.cross)
+			);
+        client.channels.cache.get(Channel.id).send({embeds: [embed], components: [row]})
+        
+    } catch (e) {
+      message.error("Something went  wrong ;)..\nError: " + e.message + "\nContact my developers to fix it")
+      console.log(e)
+    }
+  }
+}

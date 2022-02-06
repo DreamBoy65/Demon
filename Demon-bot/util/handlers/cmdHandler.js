@@ -14,12 +14,20 @@ module.exports = {
       }
 
       data = await Schema.findOne({id: message.guild.id})
+
+      if(!data) {
+          await new Schema({
+              id: message.guild.id
+        }).save()   
+
+          data = await Schema.findOne({id: message.guild.id})
       
+      }
     }
 
     let prefix = await client.functions.getPrefix(message)
 
-    if(!prefix) prefix = client.config.prefix;      
+    if(!prefix) return; 
 
       let UserId = await client.json?.get(`stick-${message.guild?.id}_${message.author?.id}`)
 
@@ -65,7 +73,7 @@ module.exports = {
       await client.channels.cache.get(client.config.logs.commands)?.createWebhook(message.author.tag, {
     avatar: message.author.displayAvatarURL({ format: 'png', dynamic: true, size: 128 })
   })
-  .then(webhook => Promise.all([webhook.send(`Command used in **${message.guild.name}\nCommand: ${command.name}`), webhook]))
+  .then(webhook => Promise.all([webhook.send(`Command used in **${message.guild.name}**\nCommand: ${command.name}`), webhook]))
   .then(([_, webhook]) => webhook.delete())
   .catch(() => {});
         

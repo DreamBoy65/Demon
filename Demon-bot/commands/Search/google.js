@@ -1,5 +1,8 @@
 const superagent = require('superagent');
 const { MessageEmbed } = require('discord.js');
+const badwords = require('bad-words');
+const filter = new badwords()
+filter.addWords("xhamster", "xhamster")
 module.exports = {
 	name: 'google',
 	category: 'Search',
@@ -15,6 +18,9 @@ module.exports = {
 					color: 'RANDOM'
 				}]
 			});
+
+        if(filter.isProfane(args.join(" ")) && message.guild && !message.channel.nsfw) return message.error("Sry but you can't search for nsfw word in non nsfw channel. ")
+        
 
 		let result = await superagent
 			.get('https://customsearch.googleapis.com/customsearch/v1')
@@ -42,6 +48,7 @@ module.exports = {
 		let res = result.body.items[0];
 
     if(!res.pagemap?.cse_image?.length) return message.channel.send("No Images Found *lol*")
+        
 		const embed = new MessageEmbed()
 			.setTitle(res.title)
 			.setAuthor(message.author.tag, message.author.displayAvatarURL())

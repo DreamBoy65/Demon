@@ -277,6 +277,6 @@ const l = translated.from.language.iso
 			.addField(lang, '```' + translated.text + '```')
 			.setColor('RANDOM')
 			.setFooter(message.author.username, message.author.displayAvatarURL());
-		m.edit({embeds: [resEmbed], content: ""});
+		m.edit({embeds: [resEmbed], content: "translated:"});
 	}
 };
