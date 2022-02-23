@@ -4,6 +4,7 @@ module.exports = {
 	name: "giveaway-reroll",
 	description: "to reroll the winner of giveaway",
 	aliases: ['greroll'],
+  examples: ["greroll <msg_id>"],
 category: "Giveaway", 
 	async execute (client, message, args){
 

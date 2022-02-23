@@ -4,6 +4,7 @@ module.exports = {
 	name: "giveaway-list",
 	description: "show the list of giveaways in server",
 	aliases: ['glist'],
+  examples: ["glist"],
 category: "Giveaway", 
 	execute(client, message, args ){
 const Discord = require("discord.js");

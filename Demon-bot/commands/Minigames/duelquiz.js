@@ -8,6 +8,7 @@ module.exports = {
     name: 'duelquiz',
     aliases: ['dq', 'quizduel', 'qd'],
     category: 'Games',
+    examples: ["dq @haruke 8"],
     usage: '[username | mention | nickname | ID] <amount>',
     description: 'Answer A Series Of Quiz Questions Against An Human',
 

@@ -4,6 +4,7 @@ const FindEmoji = require("../../util/games/findEmoji")
 module.exports = {
   name: "findemoji",
   description: "find the emoji", 
+  examples: ["findemoji"],
   category: "Games", 
   execute: async(client, message, args) => {
     new FindEmoji({

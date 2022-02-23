@@ -37,14 +37,14 @@ module.exports = {
 
     if(message.content.match(new RegExp(`^<@!?${client.user.id}>( |)$`))){
 			if(message.guild){
-				return message.send(`Heyyyy! Im demon a multipurpose bot. my prefix is ${prefix} to check my all commands type: ${prefix}help`)
+				return message.reply(`Heyyyy! Im demon a multipurpose bot. my prefix is ${prefix} to check my all commands type: ${prefix}help`)
 			} else {
-				return message.send(`${client.emoji.hello} | Heyy, my prefix is $. type: $help to check my all commands.`)
+				return message.reply(`${client.emoji.hello} | Heyy, my prefix is $. type: $help to check my all commands.`)
 			}
 		}
     
 
-    message.member = await message.guild?.members.fetch(message);
+    message.member = await message.guild?.members.fetch(message.author.id);
     
 		const args = message.content
 			.slice(prefix.length)
@@ -68,7 +68,7 @@ module.exports = {
         return message.reply({embeds: [embed]})
       }
       
-      command.execute(client, message, args, data)
+      command.execute(client, message, args, data, prefix)
 
       await client.channels.cache.get(client.config.logs.commands)?.createWebhook(message.author.tag, {
     avatar: message.author.displayAvatarURL({ format: 'png', dynamic: true, size: 128 })

@@ -2,7 +2,7 @@ module.exports = {
   name: "boostrole-list",
   aliases: [],
   category: "setup",
-  description: "list auto boost roles.",
+  description: "list auto boost roles",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],

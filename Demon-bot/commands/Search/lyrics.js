@@ -9,7 +9,7 @@ module.exports = {
   category: "Search", 
   description: 'Searches for lyric info about a song from GeniuslLyrics, or Kimi no Sei, if no query are provided.',
   
-  
+  examples: ["lyrics alone"],
   execute: async (client, message, args) => {
 
     const query =  args.join(' ') || 'alone';

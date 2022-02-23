@@ -4,11 +4,11 @@ module.exports = {
   name: "confess",
   aliases: [],
   category: "General",
-  description: "confess something.",
+  description: "confess something",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS", "MANAGE_MESSAGES"],
   memberPermissions: [],
-  examples: ["confess lol"],
+  examples: ["confess this server sucks"],
   cooldown: {
     time: 5000,
     message: ""

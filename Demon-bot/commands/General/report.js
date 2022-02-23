@@ -3,6 +3,7 @@ module.exports ={
 	name: "report",
 category: "General",
 	description:"send a report to owner",
+  examples: ["report will reporting dumb stuff get me banned?"],
 	 execute(client, message, args){
 		const owner = client.channels.cache.get("923709601214517288")
 		const query = args.join(" ")

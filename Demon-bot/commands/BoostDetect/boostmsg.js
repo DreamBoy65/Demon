@@ -2,7 +2,7 @@ module.exports = {
   name: "setboostmsg",
   aliases: [],
   category: "boost",
-  description: "set the boost message. ",
+  description: "set the boost message",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],

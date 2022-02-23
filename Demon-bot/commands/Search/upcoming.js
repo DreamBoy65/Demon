@@ -12,12 +12,13 @@ module.exports = {
 	aliases: [],
 	category: 'Search',
 	description: 'Displays the list of upcoming anime.',
+    examples: ["upcoming"],
 	execute: async (client, message, args) => {
 		let type = args[0];
 
-if(!type) return message.reply({embed: {
+if(!type) return message.reply({embeds: [{
   title: `Select between: \n${types.join("\n")}`
-}})
+}]})
 		if (types.some(x => x.toLowerCase() === type.toLowerCase())) {
 			type =
 				types[types.findIndex(c => c.toLowerCase() === type.toLowerCase())];
@@ -102,7 +103,7 @@ if(!type) return message.reply({embed: {
 				new MessageEmbed()
 					.setColor('GREY')
 					.setAuthor(`Upcoming Anime List\u2000|\u2000Type: ${type || 'ALL'}`)
-					.setDescription(anime.join('\n\n'))
+					.setDescription(`${anime.join('\n\n')} `)
 					.setFooter(
 						[
 							`Upcoming Anime Query with MAL`,

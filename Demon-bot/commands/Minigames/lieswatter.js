@@ -2,6 +2,7 @@ const { LieSwatter } = require("weky")
 module.exports = {
   name: "lieswatter",
   description: "lie swaater game",
+  examples: ["lieswatter"],
   category: "Games", 
   execute: async(client, message, args) => {
     await LieSwatter({

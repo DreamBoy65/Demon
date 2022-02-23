@@ -2,7 +2,7 @@ module.exports = {
   name: "deleteboostchannel",
   aliases: [],
   category: "boost",
-  description: "delete the boost channel.",
+  description: "delete the boost channel",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],

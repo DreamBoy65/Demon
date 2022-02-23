@@ -15,13 +15,13 @@ module.exports = {
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: [],
-  examples: ["help"],
+  examples: ["help afk"],
   cooldown: {
     time: 5000
   },
   nsfw: false,
   guildOnly: false,
-  execute: (client, message, args) => {
+  execute: (client, message, args, datw, prefix) => {
    try{
      if(args[0]){
      let commands = []    
@@ -40,18 +40,18 @@ client.commands.map(c => commands.push(c.name))
      .setDescription("Command information.")
      .addField(`**__Name__**`, `>>> • ${cmd.name}`)
      .addField(`**__Description__**`, cmd.description ? ">>> • " + cmd.description : ">>> Not Provided.")
-     .addField("**__Aliases__**", cmd.aliases.length ? ">>> • " + cmd.aliases.join(" , ") : ">>> • Not Provided")
-     .addField("**__Group__**", cmd.group ? ">>> • " + cmd.group : ">>> • Not Provided.")
-     .addField("**__Examples__**", cmd.examples.length ? ">>> • " + cmd.examples.join("\n") : ">>> • Not Provided.")
-     .addField("**__Parameters__**", cmd.parameters.length ? cmd.parameters.join("\n") : ">>> • Not Provided.")
+     .addField("**__Aliases__**", cmd.aliases?.length ? ">>> • " + cmd.aliases.join(" , ") : ">>> • Not Provided")
+     .addField("**__Group__**", cmd.category ? ">>> • " + cmd.category : ">>> • Not Provided.")
+     .addField("**__Examples__**", cmd.examples?.length ? ">>> • " + cmd.examples.join("\n") : ">>> • Not Provided.")
+     .addField("**__Parameters__**", cmd.parameters?.length ? cmd.parameters.join("\n") : ">>> • Not Provided.")
      .addField("**__Guild Only__**", cmd.guildOnly ? ">>> • True." : ">>> • False.")
      .addField("**__Admin Only__**", cmd.adminOnly ? ">>> • True." : ">>> • False.")
       .addField("**__Owner Only__**", cmd.ownerOnly ? ">>> • True." : ">>> • False.")
        
       .addField("**__Nsfw__**", cmd.nsfw ? ">>> • True." : ">>> • False.")
-      .addField("**__CoolDown Time__**", ">>> • " + cmd.cooldown.time)
-      .addField("**__Bot Permissions__**", cmd.clientPermissions.length ? ">>> • " + cmd.clientPermissions.join(" , ") : ">>> • Not Provided.")
-       .addField("**__Member Permissions__**", cmd.permissions.length ? ">>> • " + cmd.permissions.join(" , ") : ">>> • Not Provided.")
+      .addField("**__CoolDown Time__**", ">>> • " + cmd.cooldown?.time)
+      .addField("**__Bot Permissions__**", cmd.clientPermissions?.length ? ">>> • " + cmd.clientPermissions.join(" , ") : ">>> • Not Provided.")
+       .addField("**__Member Permissions__**", cmd.permissions?.length ? ">>> • " + cmd.permissions.join(" , ") : ">>> • Not Provided.")
        .setTimestamp()   
        .setColor("RANDOM")
   
@@ -119,6 +119,22 @@ let des;
       icon = client.emoji.search
       des = "Search Commands. "
   }
+  if(Dir === "Gifs"){
+      icon = client.emoji.gifs
+      des = "Gif Commands. "
+  }
+    if(Dir === "Giveaway"){
+      icon = client.emoji.giveaway
+      des = "Giveaway Commands. "
+  }
+    if(Dir === "Meme"){
+      icon = client.emoji.meme
+      des = "Meme Commands. "
+  }
+    if(Dir === "Games"){
+      icon = client.emoji.games
+      des = "Games Commands. "
+  }
   row.components[0].options.push([
   {
     label: `${Dir.toUpperCase()}`,
@@ -154,7 +170,8 @@ let des;
 
         let cmds = _.chunk(commands.map((c) => {
           
-          return `${I++}• ${c.name} | ${client.commands.get(c.name).description}`
+          return `**• ${c.name}**\n${client.emoji.reply2} ${client.commands.get(c.name).description}\n${client.emoji.reply} ${client.commands.get(c.name).examples?.length ? "\`" + prefix + client.commands.get(c.name).examples[0] 
++ "\`" : `\`${prefix}${c.name}\``}`
         }), 10)
         
         let pages = new Pages() 

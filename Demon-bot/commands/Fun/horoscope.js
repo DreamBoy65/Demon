@@ -19,11 +19,11 @@ module.exports = {
   name: "horoscope",
   aliases: [],
   category: "fun",
-  description: "get horoscope for your sign.",
+  description: "get horoscope for your sign",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: [],
-  examples: ["horoscope gemini"],
+  examples: ["horoscope aries"],
   cooldown: {
     time: 5000,
     message: ""

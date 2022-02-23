@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 module.exports = {
 	name: "shibu",
 	description: "gives you random dog pic",
+  examples: ["shibu"],
 category: "Meme",
 	async execute(client, message,args){
 const res = await fetch('http://shibe.online/api/shibes');

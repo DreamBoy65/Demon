@@ -2,11 +2,11 @@ module.exports = {
   name: "boostrole-remove",
   aliases: [],
   category: "setup",
-  description: "remove auto boost roles.",
+  description: "remove auto boost roles",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],
-  examples: ["boostrole-remove @booster"],
+  examples: ["boostrole-remove @Boosters"],
   cooldown: {
     time: 5000,
     message: ""

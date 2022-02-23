@@ -2,7 +2,7 @@ module.exports = {
   name: "cuteness",
   aliases: ["cn"],
   category: "fun",
-  description: "check your cuteness level.",
+  description: "check your cuteness level",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: [],

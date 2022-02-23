@@ -7,6 +7,7 @@ module.exports = {
         category: "Search",
         description: "Give information about urban words!",
         usage: "[word]",
+    examples: ["urban nani"],
     execute: async (bot, message, args) => {
         if(!args[0])
         return message.channel.send("Please Enter Something To Search");

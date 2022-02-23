@@ -2,11 +2,11 @@ module.exports = {
   name: "setboostchannel",
   aliases: [],
   category: "boost",
-  description: "set the boost channel.",
+  description: "set the boost channel",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],
-  examples: ["setboostchannel #boosts"],
+  examples: ["setboostchannel #Boosts"],
   cooldown: {
     time: 5000,
     message: ""

@@ -4,7 +4,7 @@ module.exports = {
   name: "animequote",
   aliases: ["aq"],
   category: "fun",
-  description: "get random anime quote. ",
+  description: "get random anime quote",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: [],

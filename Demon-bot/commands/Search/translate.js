@@ -221,6 +221,7 @@ const languages = {
 module.exports = {
 	name: 'translate',
 	category: "Search",
+    examples: ["translate hindi hello"],
 	async execute(client, message, args) {
 		const lang = args[0];
 		const q = args.slice(1).join(' ');

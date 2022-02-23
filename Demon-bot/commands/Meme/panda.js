@@ -7,6 +7,7 @@ module.exports = {
   description: "Shows a picture of a panda",
   category: "Meme",
   aliases: [""],
+  examples: ["panda"],
   usage: "panda",
   
   execute: async (bot, message, args) => {

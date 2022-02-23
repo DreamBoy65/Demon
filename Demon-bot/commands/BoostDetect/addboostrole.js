@@ -2,11 +2,11 @@ module.exports = {
   name: "boostrole-add",
   aliases: [],
   category: "boost",
-  description: "add auto boost roles.",
+  description: "add auto boost roles",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],
-  examples: ["boostrole-add @booster"],
+  examples: ["boostrole-add @Boosters"],
   cooldown: {
     time: 5000,
     message: ""

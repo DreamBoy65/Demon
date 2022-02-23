@@ -8,7 +8,7 @@ module.exports = {
 	category: 'Search',
 	description: 'Google search',
 	usage: '{query}',
-	
+	examples: ["google how to kill bot"],
 	execute : async (client, message, args) => {
 		let query = args.join(' ');
 		if (!query)

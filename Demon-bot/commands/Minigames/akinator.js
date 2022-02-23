@@ -7,6 +7,7 @@ module.exports = {
 		name: 'akinator',
 		aliases: ['aki', 'guesswho'],
 		category: 'Games',
+    examples: ["aki"],
 		usage: '[person | object | animal]',
 		description: 'Think About A Real or Fictional Character, I Will Try To Guess It',
 		acessableby: 'everyone',

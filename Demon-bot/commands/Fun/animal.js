@@ -2,11 +2,11 @@ module.exports = {
   name: "animal",
   aliases: ["ac"],
   category: "fun",
-  description: "check which anime is you.",
+  description: "check which animal is you",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: [],
-  examples: ["ac"],
+  examples: ["animal"],
   cooldown: {
     time: 5000,
     message: ""

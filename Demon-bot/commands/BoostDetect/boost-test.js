@@ -2,7 +2,7 @@ module.exports = {
   name: "boost-test",
   aliases: [],
   category: "boost",
-  description: "test the boost module.",
+  description: "test the boost module",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],

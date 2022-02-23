@@ -5,6 +5,7 @@ const game = new TicTacToe({ language: 'en' })
 module.exports = {
 	name: "tictactoe",
 	aliases: ["ttt"],
+  examples: ["ttt @dream"],
 category: 'Games',
 	async execute(client, message, args){
 const user1 = message.author;

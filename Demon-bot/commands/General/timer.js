@@ -6,6 +6,7 @@ module.exports = {
 	name: 'timer',
 	aliases: ['countDown'],
 	description: 'start a timer',
+  examples: ["timer 69m"],
 	category: 'General',
 	execute: async (client, message, args) => {
 		let Times = args.join(" ")

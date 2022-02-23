@@ -7,6 +7,7 @@ module.exports = {
         category: "Search",
         description: "Shows Results From Wikipedia",
         usage: "[query]",
+        examples: ["wiki what"],
         accessableby: "everyone",
     execute: async (bot, message, args) => {
         if (!args[0]) return message.channel.send("**Enter A Query!**")

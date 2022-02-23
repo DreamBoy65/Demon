@@ -1,12 +1,12 @@
 module.exports = {
   name: "nick",
   aliases: [],
-  category: "General",
-  description: "set the nickname of user.",
+  category: "Mod",
+  description: "set the nickname of user",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],
-  examples: ["nick @dream dot"],
+  examples: ["nick <user> <nickname>"],
   cooldown: {
     time: 5000,
     message: ""

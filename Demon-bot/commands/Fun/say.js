@@ -2,11 +2,11 @@ module.exports = {
   name: "say",
   aliases: [],
   category: "fun",
-  description: "make the bot copy cat.",
+  description: "make the bot copy cat",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: [],
-  examples: ["say im Grt"],
+  examples: ["say hehe"],
   cooldown: {
     time: 5000,
     message: ""

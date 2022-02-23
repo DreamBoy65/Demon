@@ -9,6 +9,7 @@ module.exports = {
 	description: 'Show client ping',
 	category: 'General',
 	usage: 'ping',
+  examples: ["ping"],
 	execute: async (client, message, args) => {
 		const dbping = await db.ping();
 		try {

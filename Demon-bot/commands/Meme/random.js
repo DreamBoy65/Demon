@@ -6,6 +6,7 @@ module.exports = {
     aliases: [],
     category: "Meme",
     usage: "amazeme",
+    examples: ["amazeme"],
     description: "Returns random amazing fact/image.",
     async execute(client, message, args) {
 // AGAIN, MAKE SURE TO INSTALL 'GOT' PACKAGE!

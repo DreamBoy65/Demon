@@ -8,7 +8,7 @@ module.exports = {
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],
-  examples: ["prefix $"],
+  examples: ["prefix !!"],
   cooldown: {
     time: 5000,
     message: ""

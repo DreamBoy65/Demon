@@ -2,11 +2,11 @@ module.exports = {
   name: "setstickymessage",
   aliases: [],
   category: "fun",
-  description: "set the sticky message with user.",
+  description: "set the sticky message with user",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: [],
-  examples: ["setstickymessage @dream u r baka"],
+  examples: ["setstickymessage @dream dude u gay?"],
   cooldown: {
     time: 5000,
     message: ""

@@ -9,6 +9,7 @@ module.exports = {
   aliases: ["pstore", "googleplaystore", "ps"],
   description: "Show Playstore Application Information Of Your Given Name!",
   usage: "Playstore <Application Name>",
+    examples: ["playstore free-fire"],
   category: "Search",
   async execute(client, message, args) {
     if (!args[0])

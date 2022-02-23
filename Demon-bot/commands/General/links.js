@@ -2,6 +2,7 @@ const { MessageEmbed}= require("discord.js")
 
 module.exports = {
   name: "links",
+  examples: ["links"],
 category: "General",
   description: "send you different links",
   execute(client, message, args){

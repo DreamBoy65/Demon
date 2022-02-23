@@ -2,11 +2,11 @@ module.exports = {
   name: "afk",
   aliases: [],
   category: "General",
-  description: "Set afk.",
+  description: "Set afk",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: [],
-  examples: ["afk nana"],
+  examples: ["afk hehehehehe"],
   cooldown: {
     time: 5000,
     message: ""

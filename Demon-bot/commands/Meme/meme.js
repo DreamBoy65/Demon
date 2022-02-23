@@ -4,6 +4,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
 	name: 'meme',
 category: "Meme",
+examples: ["meme"],
 	description: "Sends you random meme",
 	async execute(client, message, args ){
 		let res = await fetch('https://meme-api.herokuapp.com/gimme');

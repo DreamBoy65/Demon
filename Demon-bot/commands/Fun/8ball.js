@@ -3,11 +3,11 @@ module.exports = {
   name: "8ball",
   aliases: [],
   category: "fun",
-  description: "get a random answer for your question.",
+  description: "get a random answer for your question",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: [],
-  examples: ["8ball am i smart?"],
+  examples: ["8ball Will i get a gf?"],
   cooldown: {
     time: 5000,
     message: ""

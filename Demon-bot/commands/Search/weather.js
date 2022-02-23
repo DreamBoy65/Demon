@@ -8,6 +8,7 @@ module.exports = {
         description: "Shows weather of a city",
         usage: "[city name]",
         accessableby: "everyone",
+    examples: ["weather india"],
     execute: async (bot, message, args) => {
         if(!args[0]) return message.channel.send('**Please Enter A City Name!**')
       

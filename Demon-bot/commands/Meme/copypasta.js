@@ -5,7 +5,8 @@ module.exports = {
     name: "copypasta",
     aliases: [],
     category: "Meme",
-    usage: "amazeme",
+    usage: "copypasta",
+    examples: ["copypasta"],
     description: "Returns random amazing copy/pasta",
     async execute(client, message, args) {
 // AGAIN, MAKE SURE TO INSTALL 'GOT' PACKAGE!

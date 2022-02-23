@@ -5,6 +5,7 @@ module.exports = {
 	name: 'giveaway-start',
 	aliases: ['gstart'],
 	description: 'start a giveaway in server',
+  examples: ["gstart #Giveaways 1d 1 Fake Nitro !!"],
 category: "Giveaway", 
 	async execute(client, message, args){
 

@@ -4,6 +4,7 @@ const fetch = require("node-fetch");
 module.exports = {
   name: "earth",
   aliases: ["amazingearth"],
+  examples: ["earth"],
   description: "Amazing images of light and landscape",
   category: "Meme",
   async execute(bot, message) {

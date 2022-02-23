@@ -2,7 +2,7 @@ module.exports = {
   name: "unboost-test",
   aliases: [],
   category: "boost",
-  description: "test the unboost module.",
+  description: "test the unboost module",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],

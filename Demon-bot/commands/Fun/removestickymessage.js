@@ -2,7 +2,7 @@ module.exports = {
   name: "removestickymessage",
   aliases: [],
   category: "fun",
-  description: "remove the sticky message from user.",
+  description: "remove the sticky message from user",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: [],

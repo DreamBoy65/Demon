@@ -4,6 +4,7 @@ module.exports = {
 	name: 'snakegame',
 	category: 'Games',
 	description: 'play a game',
+  examples: ["snakegame"],
 	async execute(client, message, args) {
 	const m =	await Snake({
 			message: message,

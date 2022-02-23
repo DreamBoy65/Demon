@@ -5,7 +5,7 @@ module.exports = {
 	aliases: ['colour', 'hex'],
 	category: "Search", 
 	description: 'Shows a random color or a preview of the given color',
-	examples: ['color', 'color #ffffff'],
+	examples: ['color blue', 'color #ffffff'],
 	execute: (client, message, args) => {
 		let hex = args.join(' ');
 

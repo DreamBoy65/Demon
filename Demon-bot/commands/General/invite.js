@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
 	name: "invite",
 	description: 'To invite bot in your server ', 
+  examples: ["invite"],
 category: "General",
 	execute (client, message, args){
 		const embed = new MessageEmbed()

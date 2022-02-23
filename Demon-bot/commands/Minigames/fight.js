@@ -2,6 +2,7 @@ const { Fight } = require('weky');
 module.exports = {
 	name: 'fight',
 	description: 'fight with user',
+  examples: ["fight @dream"],
 	category: 'Games',
 	execute: async (client, message, args) => {
 		let opponent =

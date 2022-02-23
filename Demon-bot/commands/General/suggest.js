@@ -6,6 +6,7 @@ module.exports = {
  description: "Suggest feature in bot",
  category: "General",
  usage: "suggest <suggestion>",
+ examples: ["suggest add more games"],
  execute: async (client, message, args) => {
   try {
    const suggestion = args.join(" ");

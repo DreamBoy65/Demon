@@ -9,6 +9,7 @@ module.exports = {
     category: "Search",
     description: "Anime Information!",
     usage: "Anime <Name>",
+examples: ["anime baka"],
     async execute(client, message, args) {
 
         //Start

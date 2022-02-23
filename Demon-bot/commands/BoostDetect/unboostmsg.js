@@ -2,11 +2,11 @@ module.exports = {
   name: "setunboostmsg",
   aliases: [],
   category: "boost",
-  description: "set the unboost message. ",
+  description: "set the unboost message",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],
-  examples: ["setunboostmsg embed hlo"],
+  examples: ["setunboostmsg embed Dude why tf"],
   cooldown: {
     time: 5000,
     message: ""

@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
 	name: 'cat',
 category: "Meme",
+examples: ["cat"],
 	description: 'Sends a random cat image',
 	async execute(bot, message, args) {
 		const fetch = require('superagent');

@@ -8,7 +8,7 @@ module.exports = {
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],
-  examples: ["setchatbot #chatbot"],
+  examples: ["setchatbot #chat-bot"],
   cooldown: {
     time: 5000,
     message: ""

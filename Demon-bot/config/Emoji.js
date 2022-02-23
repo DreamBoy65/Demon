@@ -28,5 +28,7 @@ module.exports = {
   back: "◀️",
   next: "▶️",
   no: "<:Anime_Noo:908372789550002206>",
-  yes: "<:animeyes:908373051249418301>"
+  yes: "<:animeyes:908373051249418301>",
+    reply2: "<:Reply_2:939884167456518224>",
+  reply: "<:reply:935808892745687100>"
 }

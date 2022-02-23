@@ -4,7 +4,7 @@ module.exports = {
   name: "setchatbotavatar",
   aliases: [],
   category: "chatbot",
-  description: "set the chatbot avatar.",
+  description: "set the chatbot avatar",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],

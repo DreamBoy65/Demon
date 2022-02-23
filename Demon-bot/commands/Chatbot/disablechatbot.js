@@ -4,7 +4,7 @@ module.exports = {
   name: "removechatbot",
   aliases: [],
   category: "chatbot",
-  description: "remove the Chatbot channel.",
+  description: "remove the Chatbot channel",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: ["MANAGE_GUILD"],

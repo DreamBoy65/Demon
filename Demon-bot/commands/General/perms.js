@@ -4,6 +4,7 @@ module.exports = {
  name: "checkperm",
  aliases: ["check-perm", "perm-check", "checkperms", "check-perms", "perms-check"],
  description: "Check premission for the bot",
+ examples: ["checkperm"],
  category: "General",
  usage: "checkperm",
  execute: async (client, message, args) => {

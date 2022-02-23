@@ -3,6 +3,7 @@ module.exports = {
 	name: 'giveaway-create',
 	aliases: ['gcreate'],
 	category: "Giveaway", 
+  examples: ["gcreate"],
 	description: 'creates a giveaway',
 	async execute(client, message, args) {
 		let giveawayChannel = '';

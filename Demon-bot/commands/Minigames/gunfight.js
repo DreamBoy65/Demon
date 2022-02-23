@@ -5,6 +5,7 @@ module.exports = {
         name: 'gunfight',
         aliases: [''],
         category: 'Games',
+        examples: ["gunfight @dream"],
         usage: '[mention | username | nickname | ID]',
         description: 'Engage In A Gunfight Against Another User',
 

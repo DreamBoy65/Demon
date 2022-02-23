@@ -4,7 +4,7 @@ module.exports = {
   name: "fortune",
   aliases: [],
   category: "fun",
-  description: "get random fortunes.",
+  description: "get random fortunes",
   clientPermissions: ["SEND_MESSAGES", 
 "EMBED_LINKS"],
   memberPermissions: [],
