@@ -6,63 +6,67 @@ const json = require("./jsondb")
 const mongodb = require("./mongodb")
 
 class Bot extends Client {
-  constructor (config) {
-    super(config.client)
+    constructor(config) {
+        super(config.client)
 
-    this.commands = new Collection()
-    this.aliases = new Collection()
-    this.snipes = new Collection()
+        this.commands = new Collection()
+        this.aliases = new Collection()
+        this.snipes = new Collection()
 
-    this.config = config
-    this.functions = require(`${process.cwd()}/Demon-bot/util/functions`)
-    this.logger = require(`${process.cwd()}/Demon-bot/util/logger`)
-    this.database = new Mongoose(this, config.database)
-    this.giveawaysManager = new giveawayManager(this, config.giveaway)
-    this.emoji = require("../config/Emoji")
-    this.resolvers = require(`${process.cwd()}/Demon-bot/util/helpers/resolvers`)
-    this.collector = require(`${process.cwd()}/Demon-bot/util/helpers/collector`)
-    this.json = new json(this, config.jsondb.path)
-    this.mongo = new mongodb(this, config.database)
- 
-    require(`${process.cwd()}/Demon-bot/util/helpers/extenders`)
-  }
+        this.config = config
+        this.configg = {
+            AME_API: config.apis.AME_API
+        }
+        
+            this.functions = require(`${process.cwd()}/Demon-bot/util/functions`)
+        this.logger = require(`${process.cwd()}/Demon-bot/util/logger`)
+        this.database = new Mongoose(this, config.database)
+        this.giveawaysManager = new giveawayManager(this, config.giveaway)
+        this.emoji = require("../config/Emoji")
+        this.resolvers = require(`${process.cwd()}/Demon-bot/util/helpers/resolvers`)
+        this.collector = require(`${process.cwd()}/Demon-bot/util/helpers/collector`)
+        this.json = new json(this, config.jsondb.path)
+        this.mongo = new mongodb(this, config.database)
 
-  init() {
-     require('events').EventEmitter.prototype._maxListeners = 70;
+        require(`${process.cwd()}/Demon-bot/util/helpers/extenders`)
+    }
 
-require('events').defaultMaxListeners = 70;
+    init() {
+        require('events').EventEmitter.prototype._maxListeners = 70;
 
-['command', 'event'].forEach(handler => {
-	require(`${process.cwd()}/Demon-bot/util/handlers/${handler}`)(this);
-});
+        require('events').defaultMaxListeners = 70;
 
-    this.database?.init()
-    this.giveawaysManager?.init()
-    this.json?.init()
-    this.mongo?.init()
+        ['command', 'event'].forEach(handler => {
+            require(`${process.cwd()}/Demon-bot/util/handlers/${handler}`)(this);
+        });
+
+        this.database ?.init()
+    this.giveawaysManager ?.init()
+    this.json ?.init()
+    this.mongo ?.init()
     
     this.login(process.env.TOKEN)
-  }
+    }
 
-  listentoProcessEvents(events = [], config = {}){
-    if (!Array.isArray(events)){
-      return;
-    };
-
-    if (typeof config !== 'object'){
-      config = {};
-    };
-
-    for (const event of events){
-      process.on(event, (...args) => {
-        if (config.ignore && typeof config.ignore === 'boolean'){
-          return;
-        } else {
-          return processEvents(event, args, this);
+    listentoProcessEvents(events = [], config = {}) {
+        if (!Array.isArray(events)) {
+            return;
         };
-      });
+
+        if (typeof config !== 'object') {
+            config = {};
+        };
+
+        for (const event of events) {
+            process.on(event, (...args) => {
+                if (config.ignore && typeof config.ignore === 'boolean') {
+                    return;
+                } else {
+                    return processEvents(event, args, this);
+                };
+            });
+        };
     };
-  };
 }
 
 module.exports = Bot

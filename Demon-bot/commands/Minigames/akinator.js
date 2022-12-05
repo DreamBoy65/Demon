@@ -11,8 +11,8 @@ module.exports = {
 		usage: '[person | object | animal]',
 		description: 'Think About A Real or Fictional Character, I Will Try To Guess It',
 		acessableby: 'everyone',
-	execute: async (bot, message, args, ops) => {
-		if (!message.channel.permissionsFor(bot.user).has('EMBED_LINKS')) return message.channel.send('**Missing Permissions - [EMBED_LINKS]!**');
+	execute: async (bot, message, args) => {
+        if (!message.channel.permissionsFor(bot.user).has('EMBED_LINKS')) return message.channel.send('**Missing Permissions - [EMBED_LINKS]!**');
 		if (!args[0]) return message.channel.send(`What Category Do You Want To Use? Either \`${list(regions, 'or')}\`!`);
 		let stringAki = args[0].toLowerCase();
 		let region;

@@ -27,13 +27,13 @@ module.exports = {
 
     let prefix = await client.functions.getPrefix(message)
 
-    if(!prefix) return; 
-
       let UserId = await client.json?.get(`stick-${message.guild?.id}_${message.author?.id}`)
 
     if(UserId) {
        message.reply(UserId)
     }
+
+      if(!prefix) return;
 
     if(message.content.match(new RegExp(`^<@!?${client.user.id}>( |)$`))){
 			if(message.guild){

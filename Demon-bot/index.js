@@ -15,5 +15,9 @@ client.listentoProcessEvents([
   'unhandledRejection',
   'uncaughtException'
 ], { ignore: false });
-  
+
+global.ops = {
+    games: new Map()
+}
+
 client.init();

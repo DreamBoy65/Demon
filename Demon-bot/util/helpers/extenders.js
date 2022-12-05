@@ -37,7 +37,7 @@ return this.reply({
     .setAuthor(this.author.username, this.author.displayAvatarURL())
     .setDescription(`${emoji.cross}` + " | " + string)
     .setColor("RED")
-    .setFooter(`\©${new Date().getFullYear()} Demon-`)
+    .setFooter(`ERROR | \©${new Date().getFullYear()} Demon-`)
     .setTimestamp()
   ]})
 }
@@ -50,7 +50,7 @@ return this.reply({
     .setAuthor(this.author.username, this.author.displayAvatarURL())
     .setDescription(`${emoji.tick} | ${string}`)
     .setColor("GREEN")
-    .setFooter(`\©${new Date().getFullYear()} Demon-`)
+    .setFooter(`SUCCESS \©${new Date().getFullYear()} Demon-`)
     .setTimestamp()
   ]})
 }
